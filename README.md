@@ -1,6 +1,6 @@
 # Flexbox grid with styled-components
 
-[See online example here](playground-reactjs-flexbox-grid)
+[See online example here](https://codesandbox.io/s/playground-reactjs-flexbox-grid-03b1i)
 
 [Click here to see more examples](https://github.com/cicerohen/playground)
 
