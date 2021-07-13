@@ -1,5 +1,7 @@
 # Flexbox grid with styled-components
 
+[See online example here](playground-reactjs-flexbox-grid)
+
 [Click here to see more examples](https://github.com/cicerohen/playground)
 
 ### Development
