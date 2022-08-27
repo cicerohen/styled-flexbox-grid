@@ -1,11 +1,22 @@
+import styled from "styled-components";
 import Grid from "./components/Grid";
 import Card from "./components/Card";
+
+const Title = styled.h1`
+  text-align: center;
+`;
 
 function App() {
   return (
     <div className="App">
-      <h1>Grid one</h1>
-      <Grid container>
+      <Title> A simple ReactJS flexbox grid</Title>
+      <Title as="p">
+        View it on Github (
+        <a href="https://github.com/cicerohen/playground-reactjs-flexbox-grid">
+          https://github.com/cicerohen/playground-reactjs-flexbox-grid)
+        </a>
+      </Title>
+      <Grid container gutter={5}>
         <Grid item sm={12} md={6}>
           <Card>Column A</Card>
         </Grid>
@@ -25,6 +36,7 @@ function App() {
           <Card>Column F</Card>
         </Grid>
       </Grid>
+    
     </div>
   );
 }

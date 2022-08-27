@@ -1,20 +1,20 @@
 import styled, { css } from "styled-components";
 import { useContext } from "react";
 
-import GridContext, { GridContextType } from "./GridContext";
+import GridContext, { GridContextProps } from "./GridContext";
 import { mediaQueries, flexBasis } from "./utils";
 
-type CommonProps = {
+export type GridProps = Partial<{
   item: boolean;
   container: boolean;
   sm: number;
   md: number;
   lg: number;
-};
+}>;
 
-type StyledProps = CommonProps & GridContextType;
+type StyledProps = GridProps & GridContextProps;
 
-type Props = CommonProps & {
+type Props = GridProps & {
   children?: React.ReactNode;
 };
 
@@ -22,10 +22,12 @@ const container = css<StyledProps>`
   display: flex;
   flex-wrap: wrap;
   width: 100%;
+  > * {
+    padding: ${(props) => props.gutter}px;
+  }
 `;
 
 const item = css<StyledProps>`
-  padding: ${(props) => props.gutter}px;
   flex-grow: 0;
   ${(props) =>
     props.sm &&
@@ -45,7 +47,6 @@ const item = css<StyledProps>`
         flex-basis: ${flexBasis(props.lg, props.columns)};
         max-width: ${flexBasis(props.lg, props.columns)};
       `}
-
 `;
 
 const Wrapper = styled.div<StyledProps>`

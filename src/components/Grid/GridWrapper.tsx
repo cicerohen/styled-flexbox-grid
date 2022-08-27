@@ -1,14 +1,9 @@
-import Grid from "./Grid";
-import GridContext, { GridContextType } from "./GridContext";
+import Grid, { GridProps } from "./Grid";
+import GridContext, { GridContextProps } from "./GridContext";
 
-export type GridWrapperProps = GridContextType & {
-  container: boolean;
-  item: boolean;
-  sm: number;
-  md: number;
-  lg: number;
-  children?: React.ReactNode;
-};
+export type GridWrapperProps = Partial<
+  GridProps & GridContextProps & { children: React.ReactNode }
+>;
 
 const GridWrapper = ({
   container,

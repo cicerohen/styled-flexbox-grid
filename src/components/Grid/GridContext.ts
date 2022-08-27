@@ -1,11 +1,11 @@
 import { createContext } from "react";
 
-export type GridContextType = {
+export type GridContextProps = {
   gutter: number;
   columns: number;
 };
 
-const GridContext = createContext<GridContextType>({
+const GridContext = createContext<GridContextProps>({
   gutter: 12,
   columns: 12,
 });
